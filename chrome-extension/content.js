@@ -27,7 +27,7 @@ function startRecording() {
 
       // Use the extended MediaRecorder library
       mediaRecorder = new MediaRecorder(stream, {
-        mimeType: 'audio/webm'
+        mimeType: 'audio/wav'
       });
 
       // Add audio blobs while recording 
@@ -48,7 +48,7 @@ function sendBlob(audioBlob) {
         fetch('https://us-central1-accesibilityimagereader.cloudfunctions.net/audio_processing', {
             method: 'POST',
             headers: {
-                'Content-Type': 'audio/webm', // Set appropriate Content-Type header
+                'Content-Type': 'audio/wav', // Set appropriate Content-Type header
             },
             body: audioBlob,
         })
